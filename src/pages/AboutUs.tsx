@@ -129,16 +129,7 @@ const AboutUs = () => {
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              {
-                name: "Alex Johnson",
-                role: "Founder & CEO",
-                image: "/placeholder.svg"
-              },
-              {
-                name: "Sarah Williams",
-                role: "Chief Design Officer",
-                image: "/placeholder.svg"
-              },
+              
               {
                 name: "Michael Chen",
                 role: "Head of Technology",
