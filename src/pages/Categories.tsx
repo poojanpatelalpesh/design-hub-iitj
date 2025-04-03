@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useData } from "@/context/DataContext";
-import { ShirtIcon, GlassesIcon, HatIcon, ShoppingBag } from "lucide-react";
+import { ShirtIcon, GlassesIcon, Hat, ShoppingBag } from "lucide-react";
 
 const Categories = () => {
   const { categories } = useData();
@@ -15,7 +15,7 @@ const Categories = () => {
       case "glasses":
         return <GlassesIcon className="h-10 w-10" />;
       case "hat":
-        return <HatIcon className="h-10 w-10" />;
+        return <Hat className="h-10 w-10" />;
       default:
         return <ShoppingBag className="h-10 w-10" />;
     }
