@@ -17,18 +17,21 @@ export interface Category {
   id: string;
   name: string;
   icon: string;
+  image?: string;
   subcategories: Subcategory[];
 }
 
 export interface Subcategory {
   id: string;
   name: string;
+  image?: string;
   subSubcategories: SubSubcategory[];
 }
 
 export interface SubSubcategory {
   id: string;
   name: string;
+  image?: string;
   designerIds: string[];
 }
 
@@ -39,6 +42,7 @@ export interface Booking {
   categoryId: string;
   subcategoryId: string;
   subSubcategoryId: string;
+  designDetails?: string;
   status: "pending" | "completed" | "cancelled";
   date: string;
   paymentMethod: string;
@@ -125,6 +129,36 @@ const sampleDesigners: Designer[] = [
     description: "Streetwear cap designer with a finger on the pulse of urban fashion trends.",
     price: 130,
     portfolio: ["/placeholder.svg", "/placeholder.svg", "/placeholder.svg"]
+  },
+  {
+    id: "designer-6",
+    name: "Lisa Wang",
+    avatar: "/placeholder.svg",
+    rating: 4.8,
+    specialties: ["Accessories", "Jewelry", "Modern"],
+    description: "Contemporary jewelry designer specializing in minimalist and elegant pieces.",
+    price: 170,
+    portfolio: ["/placeholder.svg", "/placeholder.svg", "/placeholder.svg"]
+  },
+  {
+    id: "designer-7",
+    name: "James Cooper",
+    avatar: "/placeholder.svg",
+    rating: 4.9,
+    specialties: ["Outerwear", "Jackets", "Winter"],
+    description: "Technical outerwear designer with experience in creating functional yet stylish performance apparel.",
+    price: 190,
+    portfolio: ["/placeholder.svg", "/placeholder.svg", "/placeholder.svg"]
+  },
+  {
+    id: "designer-8",
+    name: "Taylor Smith",
+    avatar: "/placeholder.svg",
+    rating: 4.7,
+    specialties: ["Apparel", "T-shirts", "Graphic"],
+    description: "Graphic designer specializing in apparel prints with a distinctive urban aesthetic.",
+    price: 140,
+    portfolio: ["/placeholder.svg", "/placeholder.svg", "/placeholder.svg"]
   }
 ];
 
@@ -133,19 +167,29 @@ const sampleCategories: Category[] = [
     id: "category-1",
     name: "Footwear",
     icon: "shoe",
+    image: "/placeholder.svg",
     subcategories: [
       {
         id: "subcategory-1-1",
         name: "Athletic",
+        image: "/placeholder.svg",
         subSubcategories: [
           { 
             id: "subsubcategory-1-1-1", 
             name: "Running", 
+            image: "/placeholder.svg",
             designerIds: ["designer-1"] 
           },
           { 
             id: "subsubcategory-1-1-2", 
             name: "Basketball", 
+            image: "/placeholder.svg",
+            designerIds: ["designer-1"] 
+          },
+          { 
+            id: "subsubcategory-1-1-3", 
+            name: "Soccer", 
+            image: "/placeholder.svg",
             designerIds: ["designer-1"] 
           }
         ]
@@ -153,15 +197,43 @@ const sampleCategories: Category[] = [
       {
         id: "subcategory-1-2",
         name: "Casual",
+        image: "/placeholder.svg",
         subSubcategories: [
           { 
             id: "subsubcategory-1-2-1", 
             name: "Sneakers", 
+            image: "/placeholder.svg",
             designerIds: ["designer-2"] 
           },
           { 
             id: "subsubcategory-1-2-2", 
             name: "Loafers", 
+            image: "/placeholder.svg",
+            designerIds: ["designer-2"] 
+          },
+          { 
+            id: "subsubcategory-1-2-3", 
+            name: "Slip-ons", 
+            image: "/placeholder.svg",
+            designerIds: ["designer-2"] 
+          }
+        ]
+      },
+      {
+        id: "subcategory-1-3",
+        name: "Formal",
+        image: "/placeholder.svg",
+        subSubcategories: [
+          { 
+            id: "subsubcategory-1-3-1", 
+            name: "Dress Shoes", 
+            image: "/placeholder.svg",
+            designerIds: ["designer-2"] 
+          },
+          { 
+            id: "subsubcategory-1-3-2", 
+            name: "Oxfords", 
+            image: "/placeholder.svg",
             designerIds: ["designer-2"] 
           }
         ]
@@ -172,19 +244,29 @@ const sampleCategories: Category[] = [
     id: "category-2",
     name: "Eyewear",
     icon: "glasses",
+    image: "/placeholder.svg",
     subcategories: [
       {
         id: "subcategory-2-1",
         name: "Sunglasses",
+        image: "/placeholder.svg",
         subSubcategories: [
           { 
             id: "subsubcategory-2-1-1", 
             name: "Premium", 
+            image: "/placeholder.svg",
             designerIds: ["designer-3"] 
           },
           { 
             id: "subsubcategory-2-1-2", 
             name: "Sport", 
+            image: "/placeholder.svg",
+            designerIds: ["designer-3"] 
+          },
+          { 
+            id: "subsubcategory-2-1-3", 
+            name: "Fashion", 
+            image: "/placeholder.svg",
             designerIds: ["designer-3"] 
           }
         ]
@@ -192,15 +274,43 @@ const sampleCategories: Category[] = [
       {
         id: "subcategory-2-2",
         name: "Prescription",
+        image: "/placeholder.svg",
         subSubcategories: [
           { 
             id: "subsubcategory-2-2-1", 
             name: "Modern", 
+            image: "/placeholder.svg",
             designerIds: ["designer-4"] 
           },
           { 
             id: "subsubcategory-2-2-2", 
             name: "Classic", 
+            image: "/placeholder.svg",
+            designerIds: ["designer-4"] 
+          },
+          { 
+            id: "subsubcategory-2-2-3", 
+            name: "Reading", 
+            image: "/placeholder.svg",
+            designerIds: ["designer-4"] 
+          }
+        ]
+      },
+      {
+        id: "subcategory-2-3",
+        name: "Safety",
+        image: "/placeholder.svg",
+        subSubcategories: [
+          { 
+            id: "subsubcategory-2-3-1", 
+            name: "Industrial", 
+            image: "/placeholder.svg",
+            designerIds: ["designer-4"] 
+          },
+          { 
+            id: "subsubcategory-2-3-2", 
+            name: "Sports", 
+            image: "/placeholder.svg",
             designerIds: ["designer-4"] 
           }
         ]
@@ -211,19 +321,29 @@ const sampleCategories: Category[] = [
     id: "category-3",
     name: "Headwear",
     icon: "hat",
+    image: "/placeholder.svg",
     subcategories: [
       {
         id: "subcategory-3-1",
         name: "Caps",
+        image: "/placeholder.svg",
         subSubcategories: [
           { 
             id: "subsubcategory-3-1-1", 
             name: "Streetwear", 
+            image: "/placeholder.svg",
             designerIds: ["designer-5"] 
           },
           { 
             id: "subsubcategory-3-1-2", 
             name: "Sports", 
+            image: "/placeholder.svg",
+            designerIds: ["designer-5"] 
+          },
+          { 
+            id: "subsubcategory-3-1-3", 
+            name: "Vintage", 
+            image: "/placeholder.svg",
             designerIds: ["designer-5"] 
           }
         ]
@@ -231,16 +351,163 @@ const sampleCategories: Category[] = [
       {
         id: "subcategory-3-2",
         name: "Hats",
+        image: "/placeholder.svg",
         subSubcategories: [
           { 
             id: "subsubcategory-3-2-1", 
             name: "Formal", 
+            image: "/placeholder.svg",
             designerIds: ["designer-5"] 
           },
           { 
             id: "subsubcategory-3-2-2", 
             name: "Casual", 
+            image: "/placeholder.svg",
             designerIds: ["designer-5"] 
+          },
+          { 
+            id: "subsubcategory-3-2-3", 
+            name: "Winter", 
+            image: "/placeholder.svg",
+            designerIds: ["designer-5"] 
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "category-4",
+    name: "Accessories",
+    icon: "bag",
+    image: "/placeholder.svg",
+    subcategories: [
+      {
+        id: "subcategory-4-1",
+        name: "Jewelry",
+        image: "/placeholder.svg",
+        subSubcategories: [
+          { 
+            id: "subsubcategory-4-1-1", 
+            name: "Modern", 
+            image: "/placeholder.svg",
+            designerIds: ["designer-6"] 
+          },
+          { 
+            id: "subsubcategory-4-1-2", 
+            name: "Classic", 
+            image: "/placeholder.svg",
+            designerIds: ["designer-6"] 
+          }
+        ]
+      },
+      {
+        id: "subcategory-4-2",
+        name: "Bags",
+        image: "/placeholder.svg",
+        subSubcategories: [
+          { 
+            id: "subsubcategory-4-2-1", 
+            name: "Handbags", 
+            image: "/placeholder.svg",
+            designerIds: ["designer-6"] 
+          },
+          { 
+            id: "subsubcategory-4-2-2", 
+            name: "Backpacks", 
+            image: "/placeholder.svg",
+            designerIds: ["designer-6"] 
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "category-5",
+    name: "Outerwear",
+    icon: "shirt",
+    image: "/placeholder.svg",
+    subcategories: [
+      {
+        id: "subcategory-5-1",
+        name: "Jackets",
+        image: "/placeholder.svg",
+        subSubcategories: [
+          { 
+            id: "subsubcategory-5-1-1", 
+            name: "Winter", 
+            image: "/placeholder.svg",
+            designerIds: ["designer-7"] 
+          },
+          { 
+            id: "subsubcategory-5-1-2", 
+            name: "Casual", 
+            image: "/placeholder.svg",
+            designerIds: ["designer-7"] 
+          }
+        ]
+      },
+      {
+        id: "subcategory-5-2",
+        name: "Coats",
+        image: "/placeholder.svg",
+        subSubcategories: [
+          { 
+            id: "subsubcategory-5-2-1", 
+            name: "Formal", 
+            image: "/placeholder.svg",
+            designerIds: ["designer-7"] 
+          },
+          { 
+            id: "subsubcategory-5-2-2", 
+            name: "Raincoats", 
+            image: "/placeholder.svg",
+            designerIds: ["designer-7"] 
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "category-6",
+    name: "Apparel",
+    icon: "shirt",
+    image: "/placeholder.svg",
+    subcategories: [
+      {
+        id: "subcategory-6-1",
+        name: "T-shirts",
+        image: "/placeholder.svg",
+        subSubcategories: [
+          { 
+            id: "subsubcategory-6-1-1", 
+            name: "Graphic", 
+            image: "/placeholder.svg",
+            designerIds: ["designer-8"] 
+          },
+          { 
+            id: "subsubcategory-6-1-2", 
+            name: "Basic", 
+            image: "/placeholder.svg",
+            designerIds: ["designer-8"] 
+          }
+        ]
+      },
+      {
+        id: "subcategory-6-2",
+        name: "Pants",
+        image: "/placeholder.svg",
+        subSubcategories: [
+          { 
+            id: "subsubcategory-6-2-1", 
+            name: "Jeans", 
+            image: "/placeholder.svg",
+            designerIds: ["designer-8"] 
+          },
+          { 
+            id: "subsubcategory-6-2-2", 
+            name: "Chinos", 
+            image: "/placeholder.svg",
+            designerIds: ["designer-8"] 
           }
         ]
       }

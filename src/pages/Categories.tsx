@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useData } from "@/context/DataContext";
-import { Shirt, Glasses, Crown, ShoppingBag } from "lucide-react";
+import { Shirt, Glasses, Crown, ShoppingBag, Gem, Briefcase } from "lucide-react";
 
 const Categories = () => {
   const { categories } = useData();
@@ -16,6 +16,10 @@ const Categories = () => {
         return <Glasses className="h-10 w-10" />;
       case "hat":
         return <Crown className="h-10 w-10" />;
+      case "bag":
+        return <Briefcase className="h-10 w-10" />;
+      case "jewel":
+        return <Gem className="h-10 w-10" />;
       default:
         return <ShoppingBag className="h-10 w-10" />;
     }
@@ -39,6 +43,15 @@ const Categories = () => {
                 to={`/categories/${category.id}`}
                 className="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-200"
               >
+                {category.image && (
+                  <div className="w-full h-40 overflow-hidden">
+                    <img 
+                      src={category.image} 
+                      alt={category.name}
+                      className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                    />
+                  </div>
+                )}
                 <div className="p-6">
                   <div className="w-14 h-14 bg-designer-primary/10 rounded-full flex items-center justify-center mb-4">
                     <div className="text-designer-primary">

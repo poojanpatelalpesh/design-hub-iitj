@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -11,6 +11,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
 
 const BookDesigner = () => {
@@ -22,6 +23,7 @@ const BookDesigner = () => {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedSubcategory, setSelectedSubcategory] = useState("");
   const [selectedSubSubcategory, setSelectedSubSubcategory] = useState("");
+  const [designDetails, setDesignDetails] = useState("");
   const [paymentMethod, setPaymentMethod] = useState("credit-card");
   const [cardNumber, setCardNumber] = useState("");
   const [cardName, setCardName] = useState("");
@@ -29,6 +31,31 @@ const BookDesigner = () => {
   const [cardCVC, setCardCVC] = useState("");
   const [isBooking, setIsBooking] = useState(false);
   const [bookingComplete, setBookingComplete] = useState(false);
+
+  // Load stored category selections from localStorage if available
+  useEffect(() => {
+    if (designerId) {
+      const storedSelections = localStorage.getItem(`designer_${designerId}_selections`);
+      
+      if (storedSelections) {
+        const { categoryId, subcategoryId, subSubcategoryId } = JSON.parse(storedSelections);
+        setSelectedCategory(categoryId || "");
+        setSelectedSubcategory(subcategoryId || "");
+        setSelectedSubSubcategory(subSubcategoryId || "");
+      }
+    }
+  }, [designerId]);
+  
+  // Store category selections in localStorage when they change
+  useEffect(() => {
+    if (designerId && selectedCategory) {
+      localStorage.setItem(`designer_${designerId}_selections`, JSON.stringify({
+        categoryId: selectedCategory,
+        subcategoryId: selectedSubcategory,
+        subSubcategoryId: selectedSubSubcategory
+      }));
+    }
+  }, [designerId, selectedCategory, selectedSubcategory, selectedSubSubcategory]);
   
   if (!designerId) {
     return (
@@ -85,6 +112,11 @@ const BookDesigner = () => {
       return;
     }
     
+    if (!designDetails.trim()) {
+      toast.error("Please provide details about your design requirements");
+      return;
+    }
+    
     if (paymentMethod === "credit-card") {
       if (!cardNumber || !cardName || !cardExpiry || !cardCVC) {
         toast.error("Please fill in all payment details");
@@ -119,9 +151,13 @@ const BookDesigner = () => {
           categoryId: selectedCategory,
           subcategoryId: selectedSubcategory,
           subSubcategoryId: selectedSubSubcategory,
+          designDetails: designDetails,
           status: "pending",
           paymentMethod: paymentMethod === "credit-card" ? "Credit Card" : "PayPal"
         });
+        
+        // Clear stored selections after successful booking
+        localStorage.removeItem(`designer_${designerId}_selections`);
         
         setBookingComplete(true);
         toast.success("Designer booked successfully!");
@@ -264,6 +300,17 @@ const BookDesigner = () => {
                         </div>
                       </div>
                     )}
+                    
+                    <div className="space-y-2">
+                      <Label htmlFor="design-details" className="text-base">Design Requirements</Label>
+                      <Textarea
+                        id="design-details"
+                        placeholder="Please provide detailed information about your design requirements, preferences, and any specific instructions for the designer..."
+                        className="min-h-[120px] resize-y"
+                        value={designDetails}
+                        onChange={(e) => setDesignDetails(e.target.value)}
+                      />
+                    </div>
                   </div>
                 </div>
                 

@@ -58,6 +58,15 @@ const Subcategories = () => {
                 to={`/categories/${category.id}/${subcategory.id}`}
                 className="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-200"
               >
+                {subcategory.image && (
+                  <div className="w-full h-40 overflow-hidden">
+                    <img 
+                      src={subcategory.image} 
+                      alt={subcategory.name}
+                      className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                    />
+                  </div>
+                )}
                 <div className="p-6">
                   <div className="w-12 h-12 bg-designer-primary/10 rounded-full flex items-center justify-center mb-4">
                     <ShoppingBag className="h-6 w-6 text-designer-primary" />
