@@ -3,7 +3,7 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useData } from "@/context/DataContext";
-import { ArrowLeft, ShoppingBag } from "lucide-react";
+import { ArrowLeft, ShoppingBag, Palette, Scissors, PenTool } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Subcategories = () => {
@@ -29,6 +29,19 @@ const Subcategories = () => {
       </div>
     );
   }
+
+  const getSubcategoryIcon = (name: string) => {
+    const nameLower = name.toLowerCase();
+    if (nameLower.includes('art') || nameLower.includes('color')) {
+      return <Palette className="h-6 w-6 text-designer-primary" />;
+    } else if (nameLower.includes('cut') || nameLower.includes('fabric')) {
+      return <Scissors className="h-6 w-6 text-designer-primary" />;
+    } else if (nameLower.includes('design') || nameLower.includes('custom')) {
+      return <PenTool className="h-6 w-6 text-designer-primary" />;
+    } else {
+      return <ShoppingBag className="h-6 w-6 text-designer-primary" />;
+    }
+  };
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
@@ -69,7 +82,7 @@ const Subcategories = () => {
                 )}
                 <div className="p-6">
                   <div className="w-12 h-12 bg-designer-primary/10 rounded-full flex items-center justify-center mb-4">
-                    <ShoppingBag className="h-6 w-6 text-designer-primary" />
+                    {getSubcategoryIcon(subcategory.name)}
                   </div>
                   <h2 className="text-xl font-semibold text-gray-900 mb-2">{subcategory.name}</h2>
                   <p className="text-gray-600 mb-4">

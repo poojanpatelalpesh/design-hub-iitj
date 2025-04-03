@@ -76,9 +76,9 @@ export default {
 					900: '#0c4a6e',
 				},
 				designer: {
-					primary: '#8B5CF6',  // Updated to a vibrant purple for DesignHub
-					secondary: '#D946EF', // Added a magenta accent
-					accent: '#6366F1',   // Updated to an indigo accent
+					primary: '#8B5CF6',  // Main purple for DesignHub
+					secondary: '#D946EF', // Magenta accent
+					accent: '#6366F1',   // Indigo accent
 				}
 			},
 			borderRadius: {

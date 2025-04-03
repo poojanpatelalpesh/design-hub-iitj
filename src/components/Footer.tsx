@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-1">
-            <h3 className="text-designer-primary font-bold text-xl mb-4">StyleConnect</h3>
+            <h3 className="text-designer-primary font-bold text-xl mb-4">DesignHub</h3>
             <p className="text-gray-600 text-sm mb-4">
               Connecting clients with talented designers in fashion, accessories, and more.
             </p>
@@ -62,15 +62,15 @@ const Footer = () => {
           
           <div className="col-span-1">
             <h4 className="font-semibold text-gray-900 mb-4">Contact Us</h4>
-            <p className="text-gray-600 text-sm mb-2">Email: contact@styleconnect.com</p>
+            <p className="text-gray-600 text-sm mb-2">Email: contact@designhub.com</p>
             <p className="text-gray-600 text-sm mb-2">Phone: +1 (555) 123-4567</p>
-            <p className="text-gray-600 text-sm">Address: 123 Fashion Ave, Design District</p>
+            <p className="text-gray-600 text-sm">Address: 123 Design Ave, Creative District</p>
           </div>
         </div>
         
         <div className="border-t border-gray-200 mt-8 pt-8">
           <p className="text-gray-500 text-sm text-center">
-            © {new Date().getFullYear()} StyleConnect. All rights reserved.
+            © {new Date().getFullYear()} DesignHub. All rights reserved.
           </p>
         </div>
       </div>
