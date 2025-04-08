@@ -91,7 +91,7 @@ const AboutUs = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white rounded-lg p-6 shadow-sm">
-              <div className="text-designer-primary font-bold text-3xl mb-4">2021</div>
+              <div className="text-designer-primary font-bold text-3xl mb-4">Jan'25</div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">The Beginning</h3>
               <p className="text-gray-600">
                 StyleConnect started as a small community of fashion designers looking to connect with clients who needed custom designs.
@@ -99,7 +99,7 @@ const AboutUs = () => {
             </div>
             
             <div className="bg-white rounded-lg p-6 shadow-sm">
-              <div className="text-designer-primary font-bold text-3xl mb-4">2022</div>
+              <div className="text-designer-primary font-bold text-3xl mb-4">Feb'25</div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Growth & Expansion</h3>
               <p className="text-gray-600">
                 We expanded beyond fashion to include accessory designers, creating a more comprehensive platform for all design needs.
@@ -107,7 +107,7 @@ const AboutUs = () => {
             </div>
             
             <div className="bg-white rounded-lg p-6 shadow-sm">
-              <div className="text-designer-primary font-bold text-3xl mb-4">2023</div>
+              <div className="text-designer-primary font-bold text-3xl mb-4">March'25</div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">The Platform Today</h3>
               <p className="text-gray-600">
                 Today, StyleConnect is the leading platform connecting clients with specialized designers across multiple categories.
@@ -131,13 +131,13 @@ const AboutUs = () => {
             {[
               
               {
-                name: "Michael Chen",
-                role: "Head of Technology",
+                name: "Poojan Patel",
+                role: "Co-Founder",
                 image: "/placeholder.svg"
               },
               {
-                name: "Emma Rodriguez",
-                role: "Community Manager",
+                name: "Raman Pareek",
+                role: "Co-Founder",
                 image: "/placeholder.svg"
               }
             ].map((member, index) => (
