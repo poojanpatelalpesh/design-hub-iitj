@@ -16,7 +16,7 @@ const AboutUs = () => {
       <section className="pt-24 pb-16 bg-gradient-to-r from-gray-50 to-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl font-bold text-gray-900 mb-6">About DesignHUB</h1>
+            <h1 className="text-4xl font-bold text-gray-900 mb-6">About StyleConnect</h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Connecting innovative clients with talented designers to create the next generation of fashion and accessories.
             </p>
@@ -31,7 +31,7 @@ const AboutUs = () => {
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Mission</h2>
               <p className="text-lg text-gray-600 mb-6">
-                At DesignHUB, we believe that great design should be accessible to everyone. Our mission is to democratize design by connecting talented designers with clients who need their expertise.
+                At StyleConnect, we believe that great design should be accessible to everyone. Our mission is to democratize design by connecting talented designers with clients who need their expertise.
               </p>
               <p className="text-lg text-gray-600 mb-8">
                 We're building a world where finding the perfect designer for your specific needs is as easy as a few clicks. No more endless searching or settling for generic designs.
@@ -85,7 +85,7 @@ const AboutUs = () => {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Story</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              How DesignHUB came to life and evolved into the platform you see today
+              How StyleConnect came to life and evolved into the platform you see today
             </p>
           </div>
           
@@ -94,7 +94,7 @@ const AboutUs = () => {
               <div className="text-designer-primary font-bold text-3xl mb-4">Jan'25</div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">The Beginning</h3>
               <p className="text-gray-600">
-                DesignHUB started as a small community of fashion designers looking to connect with clients who needed custom designs.
+                StyleConnect started as a small community of fashion designers looking to connect with clients who needed custom designs.
               </p>
             </div>
             
@@ -110,7 +110,7 @@ const AboutUs = () => {
               <div className="text-designer-primary font-bold text-3xl mb-4">March'25</div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">The Platform Today</h3>
               <p className="text-gray-600">
-                Today, DesignHUB is the leading platform connecting clients with specialized designers across multiple categories.
+                Today, StyleConnect is the leading platform connecting clients with specialized designers across multiple categories.
               </p>
             </div>
           </div>
@@ -123,7 +123,7 @@ const AboutUs = () => {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Team</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Meet the people behind DesignHUB who are passionate about bringing designers and clients together
+              Meet the people behind StyleConnect who are passionate about bringing designers and clients together
             </p>
           </div>
           
@@ -163,7 +163,7 @@ const AboutUs = () => {
           <div className="text-center">
             <h2 className="text-3xl font-bold text-white mb-4">Ready to find your designer?</h2>
             <p className="text-xl text-white/80 mb-8 max-w-3xl mx-auto">
-              Join DesignHUB today and connect with top designers in your desired category.
+              Join StyleConnect today and connect with top designers in your desired category.
             </p>
             <Button 
               size="lg" 
